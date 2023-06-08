@@ -20,10 +20,12 @@ use App\Http\Controllers\Auth\LoginController;
 
 // Auth::routes();
 
-Route::get('/', [ProductController::class, 'index']);
+Route::get('/', [ProductController::class, 'index'])->middleware(['auth', 'verified']);
+Route::get('/dashboard', function () {
+    return view('home');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/edit', [ProductController::class, 'routeEdit'])->middleware(['auth', 'verified']);
-Route::get('/edit/{slug}', [ProductController::class, 'show']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -39,3 +41,5 @@ Route::get('/editprod/{id}',[ProductController::class,'edit'])->name('editprod')
 Route::post('/update/{id}', [ProductController::class, 'update'])->name('update');
 Route::get('/delete/{id}', [ProductController::class, 'destroy'])->name('delete');
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/logout', [ProfileController::class,'destroy']);

@@ -1,3 +1,7 @@
+<?php if(Auth()->user()->isAdmin == 0): ?>
+<h1>Bukan adminn</h1>
+<?php elseif(auth()->user()->isAdmin == 1): ?>
+    
 <?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <br>
 
@@ -67,9 +71,7 @@
             </tbody>
         </table>
 </div>
-
-
-
+<?php endif; ?>
 
 
 

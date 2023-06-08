@@ -1,3 +1,7 @@
+@if (Auth()->user()->isAdmin == 0)
+<h1>Bukan adminn</h1>
+@elseif(auth()->user()->isAdmin == 1)
+    
 @include('layouts.main')
 <br>
 
@@ -67,9 +71,7 @@
             </tbody>
         </table>
 </div>
-
-
-
+@endif
 
 
 {{-- <form action="" method="post">

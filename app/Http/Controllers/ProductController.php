@@ -5,13 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\product;
 use Illuminate\Http\Request;
 use \Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth; 
 
 class ProductController extends Controller
 {
     public function index()
     {
         $products = product::all();
-        return view('home', ['products'=>$products]);        
+        return view('home', ['products'=>$products]);    
+        
+        // if (Auth::id()) {
+        //     $usertype=Auth()->user()->isAdmin;
+        //     if($usertype==1){
+        //         dd("admin");
+        //     }else{
+        //         dd("user");
+        //     }
+        // }
     }
     public function routeEdit(){
         $products = product::all();
