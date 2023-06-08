@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\product;
 use Illuminate\Http\Request;
 use \Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -42,14 +42,15 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $nama_produk = $request->nama_produk;
+        $slug = Str::slug($nama_produk);
         $deskripsi = $request->deskripsi;
         $kategori = $request->kategori;
         $img = $request ->img;
         $harga = $request->harga;
         $stok = $request->stok;
 
-        $query = "CALL sp_insert_product(?, ?, ?, ?, ?, ?)";
-        $bindings = [$nama_produk, $deskripsi, $kategori,$img, $harga, $stok];
+        $query = "CALL sp_insert_product(?, ?, ?, ?, ?, ?, ?)";
+        $bindings = [$nama_produk, $deskripsi, $kategori,$img, $harga, $stok, $slug];
 
         DB::statement($query, $bindings);
         return redirect('edit');
