@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\editController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Auth::routes();
 
-Route::get('/edit', [editController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/edit/{slug}', [editController::class, 'show']);
+Route::get('/', [ProductController::class, 'index']);
+
+Route::get('/edit', [ProductController::class, 'routeEdit'])->middleware(['auth', 'verified']);
+Route::get('/edit/{slug}', [ProductController::class, 'show']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -30,8 +32,10 @@ Route::middleware('auth')->group(function () {
 });  
 require __DIR__.'/auth.php';
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
 Route::get('/home', [ProductController::class, 'index']);  
+Route::get('/add',[ProductController::class,'create'])->name('add');
+Route::post('/save', [ProductController::class, 'store'])->name('save');
+Route::get('/editprod/{id}',[ProductController::class,'edit'])->name('editprod');
+Route::post('/update/{id}', [ProductController::class, 'update'])->name('update');
+Route::get('/delete/{id}', [ProductController::class, 'destroy'])->name('delete');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

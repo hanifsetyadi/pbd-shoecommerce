@@ -45,8 +45,8 @@
     <div class="card-container">
         @foreach ($products as $item)
             <div class="card">
-                <img src="https://w7.pngwing.com/pngs/337/325/png-transparent-sneakers-shoe-running-shoes-outdoor-shoe-converse-shoe.png"
-                    class="card-img-top" alt="shoes-image">
+                <img src="{{$item->img}}"
+                    class="card-img-top" alt="shoes-image" width="300" height="250" style="object-fit: cover">
                 <div class="card-body">
                     <p class="price">@currency($item->harga)</p>
                     <p class="card-text">{{ $item->nama_produk }}</p>

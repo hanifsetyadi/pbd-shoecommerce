@@ -38,6 +38,7 @@
     }
 </style>
 <div class="container">
+    <a class="btn btn-success" href="{{route('add')}}">Tambah</a>
     <table>
         <table class="table table-stripped-columns">
             <tbody>
@@ -57,8 +58,8 @@
                         <td>
                             <div class="container">
                                 {{-- <button class="button add">Add</button> --}}
-                                <button class="button edit">Edit</button>
-                                <button class="button delete">Delete</button>
+                                <a class="btn btn-warning" href="{{route('editprod', $item->id_produk)}}">Edit</a>
+                                <a class="btn btn-danger" href="{{ route('delete', $item->id_produk) }}">Delete</a>
                             </div>
                         </td>
                     </tr>
