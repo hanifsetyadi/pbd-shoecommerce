@@ -43,7 +43,6 @@
 </style>
 <div class="container">
     <a class="btn btn-success" href="{{route('add')}}">Tambah</a>
-    <table>
         <table class="table table-stripped-columns">
             <tbody>
                 <tr>

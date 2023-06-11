@@ -6,12 +6,14 @@ use App\Models\product;
 use Illuminate\Http\Request;
 use \Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
+
 
 class ProductController extends Controller
 {
     public function index()
     {
-        $products = product::all();
+        $products = product::paginate(6);
         return view('home', ['products'=>$products]);    
         
         // if (Auth::id()) {
@@ -42,7 +44,8 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $nama_produk = $request->nama_produk;
-        $slug = Str::slug($nama_produk);
+        $slug = SlugService::createSlug(product::class, 'slug', $nama_produk);
+        // $slug = Str::slug($nama_produk);
         $deskripsi = $request->deskripsi;
         $kategori = $request->kategori;
         $img = $request ->img;

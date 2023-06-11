@@ -15,9 +15,9 @@ return new class extends Migration
             $table->increments('id_produk');
             $table->string('nama_produk');
             $table->string('slug');
-            $table->string('deskripsi');
+            $table->longText('deskripsi');
             $table->string('kategori');
-            $table->string('img')->nullable();
+            $table->longText('img')->nullable();
             $table->integer('harga');
             $table->integer('stok');
             $table->timestamps();

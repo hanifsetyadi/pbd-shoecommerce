@@ -18,8 +18,6 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
-// Auth::routes();
-
 Route::get('/', [ProductController::class, 'index'])->middleware(['auth', 'verified']);
 Route::get('/dashboard', function () {
     return view('home');
