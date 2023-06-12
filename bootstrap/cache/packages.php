@@ -1,4 +1,11 @@
 <?php return array (
+  'bennett-treptow/laravel-migration-generator' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'LaravelMigrationGenerator\\LaravelMigrationGeneratorProvider',
+    ),
+  ),
   'cviebrock/eloquent-sluggable' => 
   array (
     'providers' => 

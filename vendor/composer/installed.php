@@ -3,13 +3,22 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '35dd696ba1391017500fd69f99c563159b4707cd',
+        'reference' => 'b4a0c1b9de88880ef23c5156b49513856185b669',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'bennett-treptow/laravel-migration-generator' => array(
+            'pretty_version' => '4.3.1',
+            'version' => '4.3.1.0',
+            'reference' => '286fbaa87000080b97c5887cf70d2301182d2b91',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../bennett-treptow/laravel-migration-generator',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
         'brick/math' => array(
             'pretty_version' => '0.11.0',
             'version' => '0.11.0.0',
@@ -436,7 +445,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '35dd696ba1391017500fd69f99c563159b4707cd',
+            'reference' => 'b4a0c1b9de88880ef23c5156b49513856185b669',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -540,6 +549,15 @@
             'install_path' => __DIR__ . '/../league/mime-type-detection',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'marcj/topsort' => array(
+            'pretty_version' => '2.0.0',
+            'version' => '2.0.0.0',
+            'reference' => '972f58e42b5f110a0a1d8433247f65248abcfd5c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../marcj/topsort',
+            'aliases' => array(),
+            'dev_requirement' => true,
         ),
         'mockery/mockery' => array(
             'pretty_version' => '1.6.2',

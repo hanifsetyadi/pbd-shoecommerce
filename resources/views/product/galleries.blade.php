@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+
 <div class="container">
     <div class="row">
         <div class="col-md-6">
@@ -24,7 +25,7 @@
     .product-image {
         width: 100%;
         max-height: 300px;
-        object-fit: cover;
+        object-fit:scale-down;
     }
 </style>
 @endsection

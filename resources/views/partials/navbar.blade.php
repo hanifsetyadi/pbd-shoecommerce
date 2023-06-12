@@ -10,10 +10,10 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="home">Home</a>
+                    <a class="nav-link" aria-current="page" href="/home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="edit">Edit</a>
+                    <a class="nav-link" href="/edit">Edit</a>
                 </li>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
@@ -25,10 +25,7 @@
                                 Logout
                         </a>
                     </li>
-
                 </form>
-
-
             </ul>
             </form>
         </div>

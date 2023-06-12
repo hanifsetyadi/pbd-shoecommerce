@@ -7,8 +7,8 @@
         /* Memberikan ruang antara kartu */
         justify-content: flex-start;
         margin: 20px;
+        text-decoration: none;
     }
-    .card {}
     .container h2 {
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         font: 800;
@@ -35,26 +35,30 @@
     .price {
         font-weight: bold;
     }
+    .card{
+        text-decoration: none;
+    }
 </style>
 
 <div class="container">
     <h2 style="text-align: center;">Our Catalog</h2>
 </div>
-
-@if ($products->count())
+<div class="container">
+    @if ($products->count())
     <div class="card-container">
         @foreach ($products as $item)
         <a href="{{ route('products.galleries', $item->slug) }}" class="card">
                 <img src="{{$item->img}}"
-                    class="card-img-top" alt="shoes-image" width="300" height="250" style="object-fit: cover">
+                class="card-img-top" alt="shoes-image" width="300" height="200" style="object-fit: cover">
                 <div class="card-body">
-                    <p class="price">@currency($item->harga)</p>
-                    <p class="card-text">{{ $item->nama_produk }}</p>
-                    <p class="desc">{{ $item->deskripsi }}</p>
-                </div>        
-        </a>
-        @endforeach
+                    <p class="price" style="text-decoration: none">@currency($item->harga)</p>
+                    <p class="card-text" style="text-decoration: none">{{ $item->nama_produk }}</p>
+                    <p class="desc" style="text-decoration: none">{{ $item->deskripsi }}</p>
+                </div>
+            </a>
+            @endforeach
     </div>
 @else
-    <p class="text-center fs-4">No Product Found.</p>
+<p class="text-center fs-4">No Product Found.</p>
 @endif
+</div>
