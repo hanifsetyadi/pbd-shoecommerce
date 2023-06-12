@@ -98,4 +98,10 @@ class ProductController extends Controller
         $pr->delete();
         return back();
     }   
+
+    public function galleries($slug)
+    {
+        $pr = product::where('slug', $slug)->firstOrFail();
+        return view('product.galleries', ['product' => $pr]);
+    }
 }

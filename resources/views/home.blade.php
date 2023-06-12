@@ -44,15 +44,15 @@
 @if ($products->count())
     <div class="card-container">
         @foreach ($products as $item)
-            <div class="card">
+        <a href="{{ route('products.galleries', $item->slug) }}" class="card">
                 <img src="{{$item->img}}"
                     class="card-img-top" alt="shoes-image" width="300" height="250" style="object-fit: cover">
                 <div class="card-body">
                     <p class="price">@currency($item->harga)</p>
                     <p class="card-text">{{ $item->nama_produk }}</p>
                     <p class="desc">{{ $item->deskripsi }}</p>
-                </div>
-            </div>
+                </div>        
+        </a>
         @endforeach
     </div>
 @else

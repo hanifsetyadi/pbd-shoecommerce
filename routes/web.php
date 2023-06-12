@@ -41,3 +41,6 @@ Route::get('/delete/{id}', [ProductController::class, 'destroy'])->name('delete'
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/logout', [ProfileController::class,'destroy']);
+
+//Detail Product
+Route::get('/products/{slug}', [ProductController::class,'galleries'])->name('products.galleries');

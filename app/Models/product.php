@@ -31,4 +31,6 @@ class product extends Model
     }
 
     protected $increment = true;
+
+    
 }
