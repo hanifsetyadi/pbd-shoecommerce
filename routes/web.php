@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\transactionController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
@@ -41,6 +42,11 @@ Route::get('/delete/{id}', [ProductController::class, 'destroy'])->name('delete'
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/logout', [ProfileController::class,'destroy']);
+Route::get('/transaction', [transactionController::class,'index']);
+Route::post('/save-transaction', [transactionController::class, 'store'])->name('save-transaction');
+
+
+
 
 //Detail Product
 Route::get('/products/{slug}', [ProductController::class,'galleries'])->name('products.galleries');

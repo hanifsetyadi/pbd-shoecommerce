@@ -54,6 +54,7 @@
                     <p class="price" style="text-decoration: none">@currency($item->harga)</p>
                     <p class="card-text" style="text-decoration: none">{{ $item->nama_produk }}</p>
                     <p class="desc" style="text-decoration: none">{{ $item->deskripsi }}</p>
+
                 </div>
             </a>
             @endforeach

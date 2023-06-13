@@ -51,6 +51,7 @@ class ProductController extends Controller
         $img = $request ->img;
         $harga = $request->harga;
         $stok = $request->stok;
+        
 
         $query = "CALL sp_insert_product(?, ?, ?, ?, ?, ?, ?)";
         $bindings = [$nama_produk, $deskripsi, $kategori,$img, $harga, $stok, $slug];
