@@ -34,7 +34,7 @@
                     </li>
                 </form>
                 <div class="dropdown">
-                    <a class="btn" role="button" href="/transaction">
+                    <a class="btn"role="button" href="/transaction">
                         <i class="fa-solid fa-cart-shopping"></i> Transaction
                     </a>
                 </div>

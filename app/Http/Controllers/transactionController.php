@@ -6,6 +6,7 @@ use App\Models\product;
 use App\Models\transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class transactionController extends Controller
 {
@@ -22,14 +23,17 @@ class transactionController extends Controller
 
         $compare = DB::table('products')->select('stok')->where('id_produk', '=', $id)->value('stok');
         if($request->jumlah > $compare){
-            dd("stok kurang");
+            Alert::error('Gagal', 'Stok Tidak Tersedia');
+            return redirect('/transaction');
         } else if ($request->jumlah <= 0) {
-            dd("kurang dari 0");
+            Alert::error('Gagal', 'Input Salah');
+            return redirect('/transaction');
         } else {
             transaction::create([
                 'id_produk' => $id,
                 'jumlah' => $jumlah
             ]);
+            Alert::success('Berhasil', 'Terimakasih Telah Melakukan Transaksi');
             return redirect('home');
         }
     }

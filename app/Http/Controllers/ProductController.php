@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use \Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class ProductController extends Controller
@@ -14,16 +15,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = product::paginate(6);
-        return view('home', ['products'=>$products]);    
-        
-        // if (Auth::id()) {
-        //     $usertype=Auth()->user()->isAdmin;
-        //     if($usertype==1){
-        //         dd("admin");
-        //     }else{
-        //         dd("user");
-        //     }
-        // }
+        return view('home', ['products'=>$products]);
     }
     public function routeEdit(){
         $products = product::all();
@@ -57,6 +49,7 @@ class ProductController extends Controller
         $bindings = [$nama_produk, $deskripsi, $kategori,$img, $harga, $stok, $slug];
 
         DB::statement($query, $bindings);
+        Alert::success('Sukses', 'Sukses Menambahkan Produk');
         return redirect('edit');
     }
 
@@ -86,6 +79,7 @@ class ProductController extends Controller
         //
         $pr = product::findorfail($id);
         $pr->update($request->all());
+        Alert::success('Berhasil', 'Berhasil Melakukan Edit Data Produk');
         return redirect('edit');
     }
 
@@ -97,6 +91,7 @@ class ProductController extends Controller
         //
         $pr = product::findorfail($id);
         $pr->delete();
+        Alert::alert('Berhasil Menghapus', 'Item Dihapus');
         return back();
     }   
 

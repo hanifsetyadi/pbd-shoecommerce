@@ -19,7 +19,7 @@ class CreateTransactionTable extends Migration
             $table->integer('jumlah');
             $table->dateTime('waktu_transaksi');
             
-            $table->foreign('id_produk', 'FK_transaction_products')->references('id_produk')->on('products')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('id_produk', 'FK_transaction_products')->references('id_produk')->on('products')->onDelete('cascade')->onUpdate('restrict');
         });
     }
 

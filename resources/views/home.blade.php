@@ -48,18 +48,19 @@
     <div class="card-container">
         @foreach ($products as $item)
         <a href="{{ route('products.galleries', $item->slug) }}" class="card">
-                <img src="{{$item->img}}"
-                class="card-img-top" alt="shoes-image" width="300" height="200" style="object-fit: cover">
-                <div class="card-body">
-                    <p class="price" style="text-decoration: none">@currency($item->harga)</p>
-                    <p class="card-text" style="text-decoration: none">{{ $item->nama_produk }}</p>
-                    <p class="desc" style="text-decoration: none">{{ $item->deskripsi }}</p>
-
-                </div>
-            </a>
-            @endforeach
+            <img src="{{$item->img}}"
+            class="card-img-top" alt="shoes-image" width="300" height="200" style="object-fit: cover">
+            <div class="card-body">
+                <p class="price" style="text-decoration: none">@currency($item->harga)</p>
+                <p class="card-text" style="text-decoration: none">{{ $item->nama_produk }}</p>
+                <p class="desc" style="text-decoration: none">{{ $item->deskripsi }}</p>
+                
+            </div>
+        </a>
+        @endforeach
     </div>
-@else
+    @else
+    @include('sweetalert::alert')
 <p class="text-center fs-4">No Product Found.</p>
 @endif
 </div>
