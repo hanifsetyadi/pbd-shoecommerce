@@ -10,7 +10,7 @@
         text-decoration: none;
     }
     .container h2 {
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-family: "Poppins", sans-serif;
         font: 800;
         color: #829f71;
     }

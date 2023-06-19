@@ -1,15 +1,11 @@
 <head>
-    <style>
-        .btn {
-            background-color: #f5a442;
-        }
-    </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/style.css">
 </head>
 
 <nav class="navbar navbar-expand-lg" style="background-color: #efcf78;">
     <div class="container">
-        <a class="navbar-brand" href="home"><img src="https://cdn3.emoji.gg/emojis/6757_Sadge.png" alt="logo"
+        <a class="navbar-brand" href="/home"><img src="https://cdn3.emoji.gg/emojis/6757_Sadge.png" alt="logo"
                 style="width: 50px;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
