@@ -43,10 +43,9 @@ Route::get('/delete/{id}', [ProductController::class, 'destroy'])->name('delete'
 
 Route::get('/logout', [ProfileController::class,'destroy']);
 Route::get('/transaction', [transactionController::class,'index']);
+Route::get('/list-transaction', [transactionController::class, 'getAllTransaction']);
 Route::post('/save-transaction', [transactionController::class, 'store'])->name('save-transaction');
-
-
-
+Route::get('/delete-transaction/{id}', [transactionController::class, 'deleteTransaction'])->name('delete-transaction');
 
 //Detail Product
 Route::get('/products/{slug}', [ProductController::class,'galleries'])->name('products.galleries');

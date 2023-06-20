@@ -8,6 +8,7 @@
 
 <div class="container">
     <h1>Silahkan Memasukkan Data Produk Yang Ingin Dicheckout</h1>
+    <a href="/list-transaction" class="btn">Lihat Transaksi</a>
     <form action="{{route('save-transaction')}}" method="post">
         @csrf
         <label for="nama" class="form-label">Nama Produk</label>

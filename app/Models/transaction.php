@@ -11,4 +11,8 @@ class transaction extends Model
     protected $table = "transactions";
     protected $primaryKey = "id_transaksi";
     protected $fillable = ['id_produk', 'jumlah'];
+
+    public function product(){
+        return $this->hasMany(product::class, 'id_produk');
+    }
 }
